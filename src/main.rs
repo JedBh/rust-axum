@@ -13,7 +13,7 @@ async fn main() {
         get(|| async { Html("Hello <strong>World!!!</strong>") }),
     );
 
-    let addr = SocketAddr::from(([0, 0, 0, 0], 80));
+    let addr = SocketAddr::from(([0, 0, 0, 0], 8080));
     println!("Listening on {}\n", addr);
     axum::Server::bind(&addr)
         .serve(routes_hello.into_make_service())
